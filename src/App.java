@@ -1,15 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import atividade.domain.Carro;
-import atividade.domain.ListaCarros;
+import atividade.domain.Honda;
+import atividade.domain.Hyundai;
+import atividade.domain.Toyota;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        ListaCarros<Carro> listaCarros = new ListaCarros<>();
+        List<Carro> listaDeCarros = new ArrayList<>();
 
-        listaCarros.adicionar(new Carro("Mustang", "Ford", 2022));
-        listaCarros.adicionar(new Carro("Gol", "Volkswagen", 2019));
+        Carro honda = new Honda("Civic", 2020);
+        Carro hyundai = new Hyundai("HB20", 2022);
+        Carro toyota = new Toyota("Corolla", 2021);
 
-        listaCarros.listar();
-    
+        listaDeCarros.add(honda);
+        listaDeCarros.add(hyundai);
+        listaDeCarros.add(toyota);
+
+        for (Carro carro : listaDeCarros) {
+            System.out.println(carro);
+            carro.acelerar();
+            System.out.println("------------------");
+        }
+
     }
 }

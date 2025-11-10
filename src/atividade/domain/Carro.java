@@ -1,13 +1,11 @@
 package atividade.domain;
 
-public class Carro {
+public abstract class Carro {
     private String modelo;
-    private String marca;
     private int ano;
 
-    public Carro(String modelo, String marca, int ano) {
+    public Carro(String modelo, int ano) {
         this.modelo = modelo;
-        this.marca = marca;
         this.ano = ano;
     }
 
@@ -15,16 +13,14 @@ public class Carro {
         return modelo;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
     public int getAno() {
         return ano;
     }
 
+    public abstract void acelerar();
+
     @Override
     public String toString() {
-        return marca + " " + modelo + " (" + ano + ")";
+        return getClass().getSimpleName() + " " + modelo + " (" + ano + ")";
     }
 }
